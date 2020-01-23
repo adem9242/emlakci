@@ -1,0 +1,235 @@
+﻿
+@{
+    ViewBag.Title = "İlanlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    <table class="table table-striped">
+        <thead class="bg-secondary">
+            <tr>
+                <th style="color:white;">Genel Özellikler ve Yorum</th>
+
+            </tr>
+        </thead>
+
+    </table>
+
+    <form action="/İlan/Emlakekle" enctype="multipart/form-data" method="post">
+
+
+        <div class="row">
+            <div class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> İlan Kategorisi :</div>
+                <select class="form-control form-control-sm" name="ILAN_KATEGORISI" id="validationCustom03" onchange="ChangecatList()" required>
+                    <option value="">Seçiniz </option>
+                    <option value="Satılık">Konut >> Satılık</option>
+                    <option value="Kiralık">Konut >> Kiralık</option>
+                    <option value="Günlük Kiralık">Konut >> Günlük Kiralık</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> İlan Başlığı :</div>
+
+                <input style="height:2.5em; width:100%" name="ILAN_BASLIGI" type="text" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Fiyat:</div>
+
+                <input class="numericInput js-manual-search-input" data-sectio="price" style="height:2em; width:35%" name="FIYAT" type="text" step="1" />
+
+
+            </div>
+            <div class="col-md-2 mb-1">
+                <div class="label"><font color="#b80000" size="3"><br /></font></div>
+                <input disabled style="margin-left:-20em;  height:2em; width:30%" name="baslik" type="text" placeholder="TL" />
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 mb-3">
+                <div class="label"><font color="#b80000" size="3">*</font> Konut Tipi :</div>
+                <select class="form-control form-control-sm" name="KONUT_TIPI" id="validationCustom03" onchange="ChangecatList()" required>
+                    <option value="">Seçiniz</option>
+                    <option value="Daire">Daire</option>
+                    <option value="Bina">Bina</option>
+                    <option value="Köy Evi">Köy Evi</option>
+                    <option value="Müstakil Ev">Müstakil Ev</option>
+                    <option value="Residence">Residence</option>
+                    <option value="Villa">Villa</option>
+                    <option value="Yazlık">Yazlık</option>
+
+                </select>
+            </div>
+            <div style="margin-left:10em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Bina Yaşı:</div>
+
+                <input style="height:2em; width:65%" name="BINA_YASI" type="number" />
+            </div>
+            <div class="col-md-2 mb-3">
+                <div class="label"><font color="#b80000" size="3">*</font> Isınma Tipi :</div>
+                <select class="form-control form-control-sm" name="ISINMA_TIPI" id="validationCustom03" onchange="ChangecatList()" required>
+                    <option value="">Seçiniz </option>
+                    <option value="Güneş Enerjisi">Güneş Enerjisi</option>
+                    <option value="Kat Kaloriferi">Kat Kaloriferi</option>
+                    <option value="Klima">Klima</option>
+                    <option value="Kombi">Kombi</option>
+                    <option value="Merkezi">Merkezi</option>
+                    <option value="Merkezi(Pay Ölçer)">Merkezi(Pay Ölçer)</option>
+                    <option value="Soba">Soba</option>
+
+                </select>
+            </div>
+            <div style="margin-left:7em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Oda Sayısı :</div>
+
+                <input style="height:2em; width:45%" name="ODA_SAYISI" type="number" />
+            </div>
+            <div style="margin-left:0em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Salon Sayısı :</div>
+
+                <input style="height:2em; width:65%" name="SALON_SAYISI" type="number" />
+            </div>
+            <div style="margin-left:1em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Banyo Sayısı :</div>
+
+                <input style="height:2em; width:65%" name="BANYO_SAYISI" type="number" />
+            </div>
+            <div style="margin-left:0em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Bürüt m² :</div>
+
+                <input style="height:2em; width:65%" name="BURUT_METREKARE" type="number" />
+            </div>
+            <div style="margin-left:-1.5em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Net m² :</div>
+
+                <input style="height:2em; width:45%" name="NET_METREKARE" type="number" />
+            </div>
+            <div style="margin-left:0em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Kat Sayısı :</div>
+
+                <input style="height:2em; width:65%" name="KAT_SAYISI" type="number" />
+            </div>
+            <div style="margin-left:1em;" class="col-md-2 mb-3">
+                <div class="label"><font color="#b80000" size="3"></font> Bulunduğu Kat :</div>
+                <select class="form-control form-control-sm" name="BULUNDUGU_KAT" id="validationCustom03" onchange="ChangecatList()" required>
+                    <option value="">Seçiniz </option>
+                    <option value="Yüksek Giriş">Yüksek Giriş</option>
+                    <option value="Ara Kat">Ara Kat</option>
+                    <option value="Zemin">Zemin</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                </select>
+            </div>
+            <div style="margin-left:9em;" class="col-md-2 mb-3">
+                <div class="label"><font color="#b80000" size="3"></font> Kullanım Durumu :</div>
+                <select class="form-control form-control-sm" name="KULLANIM_DURUMU" id="validationCustom03" onchange="ChangecatList()" required>
+                    <option value="">Seçiniz </option>
+                    <option value="Boş">Boş</option>
+                    <option value="Kiracı Oturuyor">Kiracı Oturuyor</option>
+                    <option value="Ev Sahibi Oturuyor">Ev Sahibi Oturuyor</option>
+                    <option value="Belirtilmemiş">Belirtilmemiş</option>
+
+                </select>
+            </div>
+            <div style="margin-left:7em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3"></font> Aidat :</div>
+
+                <input style="height:2em; width:35%" name="AIDAT" type="number" />
+                <input disabled style="height:2em; width:15%" name="baslik" type="text" placeholder="TL" />
+            </div>
+
+        </div>
+        <br />
+        <table class="table table-striped">
+            <thead class="bg-secondary">
+                <tr>
+                    <th>Adres Seçimi</th>
+
+                </tr>
+            </thead>
+
+        </table>
+        <div class="row">
+            <div style="margin-left:9em;" class="col-md-2 mb-3">
+                <div class="label"><font color="#b80000" size="3">*</font> İl</div>
+                <select class="form-control form-control-sm" name="iller" id="il"  onchange="ChangecatList()" required>
+                    
+                  
+
+
+                </select>
+            </div>
+            <div style="margin-left:9em;" class="col-md-2 mb-3">
+                <div class="label"><font color="#b80000" size="3">*</font> İlçe</div>
+                <select  class="form-control form-control-sm" name="ilceler" id="ilce" onchange="ChangecatList()" required>
+                    <option>Bir İl Seçiniz</option>
+                    
+                </select>
+            </div>
+            <div style="margin-left:9em;" class="col-md-2 mb-3">
+                <div class="label"><font color="#b80000" size="3">*</font> Mahalle</div>
+                <select class="form-control form-control-sm" name="category" id="validationCustom03" onchange="ChangecatList()" required>
+                    <option value="">Choose... </option>
+                    <option value="Classroom Instruction and Assessment">Classroom Instruction and Assessment</option>
+                    <option value="Curriculum Development and Alignment">Curriculum Development and Alignment</option>
+                    <option value="District Committee">District Committee</option>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Other Category">Other Category</option>
+                    <option value="Professional Conference">Professional Conference</option>
+                    <option value="Professional Workshop / Training">Professional Workshop / Training</option>
+                    <option value="Pupil Services">Pupil Services</option>
+                </select>
+            </div>
+
+            <div style="margin-left:9em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Cadde :</div>
+
+                <input style="height:2em; width:65%" name="baslik" type="text" />
+            </div>
+            <div style="margin-left:0em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> No :</div>
+
+                <input style="height:2em; width:65%" name="baslik" type="text" />
+            </div>
+            <div style="margin-left:0em;" class="col-md-3 mb-1">
+                <div class="label"><font color="#b80000" size="3">*</font> Açık Adres :</div>
+
+                <input style="height:5em; width:85%" name="baslik" type="text" />
+            </div>
+
+        </div>
+        <br />
+
+
+
+
+
+       
+
+
+            <input  style="margin-left:40em; width:15%;" type="submit" class="btn btn-primary btn-success" value="KAYDET">
+       
+    </form>

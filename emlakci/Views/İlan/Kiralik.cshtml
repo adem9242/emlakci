@@ -1,0 +1,376 @@
+﻿
+@{
+    ViewBag.Title = "Kiralik";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using emlakci.Models;
+@model  List<EMLAKLAR>
+
+<table style="margin:0px;padding:0px;">
+    <tr>
+        <td>
+            <form action="" method="post">
+
+
+                <table style="width:100%;" class="table table-striped">
+                    <thead class="btn-info">
+                        <tr>
+                            <th style="color:black">Adres</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div class="row">
+                                    <div class="col-md-8 mb-1">
+
+                                        <select class="form-control form-control-sm" name="ILAN_KATEGORISI" id="validationCustom03" onchange="ChangecatList()" required>
+                                            <option value="">İL </option>
+                                            <option value="Satılık">Konut >> Satılık</option>
+                                            <option value="Kiralık">Konut >> Kiralık</option>
+                                            <option value="Günlük Kiralık">Konut >> Günlük Kiralık</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="row">
+                                    <div class="col-md-8 mb-1">
+
+                                        <select class="form-control form-control-sm" name="ILAN_KATEGORISI" id="validationCustom03" onchange="ChangecatList()" required>
+                                            <option value="">İLÇE </option>
+                                            <option value="Satılık">Konut >> Satılık</option>
+                                            <option value="Kiralık">Konut >> Kiralık</option>
+                                            <option value="Günlük Kiralık">Konut >> Günlük Kiralık</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="row">
+                                    <div class="col-md-8 mb-1">
+
+                                        <select class="form-control form-control-sm" name="ILAN_KATEGORISI" id="validationCustom03" onchange="ChangecatList()" required>
+                                            <option value="">SEMT/MAHALLE </option>
+                                            <option value="Satılık">Konut >> Satılık</option>
+                                            <option value="Kiralık">Konut >> Kiralık</option>
+                                            <option value="Günlük Kiralık">Konut >> Günlük Kiralık</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+
+
+                <table style="width:15em;" class="table table-striped">
+                    <thead class="btn-info">
+                        <tr>
+                            <th>
+                                <ul class="nav">
+                                    <li class="panel panel-default" id="dropdown">
+                                        <a style="color:black;" data-toggle="collapse" href="#odasayisi">
+                                            Oda Sayısı <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div id="odasayisi" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><input type="checkbox" /> <a href="#">Studyo(1+0)</a></li>
+                                            <li><input type="checkbox" /><a href="#">1+1</a></li>
+                                            <li><input type="checkbox" /><a href="#">2+0</a></li>
+                                            <li><input type="checkbox" /><a href="#">2+1</a></li>
+                                            <li><input type="checkbox" /><a href="#">2+2</a></li>
+                                            <li><input type="checkbox" /><a href="#">3+1</a></li>
+                                            <li><input type="checkbox" /><a href="#">3+2</a></li>
+                                            <li><input type="checkbox" /><a href="#">4+1</a></li>
+                                            <li><input type="checkbox" /><a href="#">4+2</a></li>
+                                            <li><input type="checkbox" /><a href="#">4+3</a></li>
+                                            <li><input type="checkbox" /><a href="#">5+1</a></li>
+                                            <li><input type="checkbox" /><a href="#">5+2</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:15em;" class="table table-striped">
+                    <thead class="btn-info">
+                        <tr>
+                            <th>
+                                <ul class="nav">
+                                    <li class="panel panel-default" id="dropdown">
+                                        <a style="color:black;" data-toggle="collapse" href="#binayasi">
+                                            Bina Yaşı <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div id="binayasi" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><input type="checkbox" /> <a href="#">Studyo(1+0)</a></li>
+                                            <li><input type="checkbox" /><a href="#">0</a></li>
+                                            <li><input type="checkbox" /><a href="#">1</a></li>
+                                            <li><input type="checkbox" /><a href="#">2</a></li>
+                                            <li><input type="checkbox" /><a href="#">3</a></li>
+                                            <li><input type="checkbox" /><a href="#">4</a></li>
+                                            <li><input type="checkbox" /><a href="#">5-10 Arası</a></li>
+                                            <li><input type="checkbox" /><a href="#">11-15 Arası</a></li>
+                                            <li><input type="checkbox" /><a href="#">16-20 Arası</a></li>
+                                            <li><input type="checkbox" /><a href="#">21-40 Arası</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:15em;" class="table table-striped">
+                    <thead class="btn-info">
+                        <tr>
+                            <th>
+                                <ul class="nav">
+                                    <li class="panel panel-default" id="dropdown">
+                                        <a style="color:black;" data-toggle="collapse" href="#bulundugukat">
+                                            Bulunduğu Kat <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div id="bulundugukat" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><input type="checkbox" /> <a href="#">Bodrum Kat</a></li>
+                                            <li><input type="checkbox" /><a href="#">Zemin Kat</a></li>
+                                            <li><input type="checkbox" /><a href="#">Giriş Katı</a></li>
+                                            <li><input type="checkbox" /><a href="#">0</a></li>
+                                            <li><input type="checkbox" /><a href="#">1</a></li>
+                                            <li><input type="checkbox" /><a href="#">2</a></li>
+                                            <li><input type="checkbox" /><a href="#">3</a></li>
+                                            <li><input type="checkbox" /><a href="#">4</a></li>
+                                            <li><input type="checkbox" /><a href="#">5</a></li>
+                                            <li><input type="checkbox" /><a href="#">6</a></li>
+                                            <li><input type="checkbox" /><a href="#">7</a></li>
+                                            <li><input type="checkbox" /><a href="#">8</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:15em;" class="table table-striped">
+                    <thead class="btn-info">
+                        <tr>
+                            <th>
+                                <ul class="nav">
+                                    <li class="panel panel-default" id="dropdown">
+                                        <a style="color:black;" data-toggle="collapse" href="#isitma">
+                                            Isıtma <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div id="isitma" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><input type="checkbox" /> <a href="#">Yok</a></li>
+                                            <li><input type="checkbox" /><a href="#">Soba</a></li>
+                                            <li><input type="checkbox" /><a href="#">Doğalgaz</a></li>
+                                            <li><input type="checkbox" /><a href="#">Kat Kaloriferi</a></li>
+                                            <li><input type="checkbox" /><a href="#">Merkezi</a></li>
+                                            <li><input type="checkbox" /><a href="#">Merkezi(Pay Ölçer)</a></li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:15em;" class="table table-striped">
+                    <thead class="btn-info">
+                        <tr>
+                            <th>
+                                <ul class="nav">
+                                    <li class="panel panel-default" id="dropdown">
+                                        <a style="color:black;" data-toggle="collapse" href="#kuldurumu">
+                                            Kullanım Durumu <span class="caret"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div id="kuldurumu" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><input type="checkbox" /><a href="#">Boş</a></li>
+                                            <li><input type="checkbox" /><a href="#">Kiracılı</a></li>
+                                            <li><input type="checkbox" /><a href="#">Mülk Sahibi</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table style="width:15em;" class="table table-striped">
+                    <thead class="bg-white">
+                        <tr>
+                            <th>
+                                <ul style="width:100%;" class="nav">
+                                    <li style="width:100%;" class="panel panel-default" id="dropdown">
+                                        <input style="width:100%;" class="btn btn-primary btn-block" type="submit" value="ARA" />
+
+
+                                    </li>
+                                </ul>
+                            </th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+
+            </form>
+
+
+        </td>
+        <td>
+            <div style="margin-top:-20em;" class="col-md-12">
+                <div class="panel-primary filterable">
+                    <div class="panel-heading">
+
+                        <table class="table table-striped">
+                            <thead class="bg-info">
+                                <tr>
+
+                                    <th> <button style="background-color:lavender;color:black;" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>FİLTRELE</button></th>
+
+                                    <th>
+                                        <div style="float:right; margin-top:1em;" class="col-md-3 mb-3">
+                                            <select style="cursor:pointer;" class="form-control form-control-sm" name="category" id="validationCustom03" onchange="ChangecatList()" required>
+                                                <option value="">Gelişmiş Sırılama </option>
+                                                <option value="Boş">Fiyata göre(Önce en yüksek)</option>
+                                                <option value="Kiracı Oturuyor">Fiyata göre(Önce en düşük)</option>
+                                                <option value="Ev Sahibi Oturuyor">Tarihe göre (Önce en yeni ilan)</option>
+                                                <option value="Belirtilmemiş">Tarihe göre (Önce en eski ilan)</option>
+                                                <option value="Belirtilmemiş">Adrese göre (A - Z)</option>
+                                                <option value="Belirtilmemiş">Adrese göre (Z - A)</option>
+
+                                            </select>
+                                        </div>
+                                    </th>
+
+
+
+
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+
+
+                    <table border="1" style="cursor:pointer;" class="table table-bordered table-hover table-sortable">
+                        <thead style="background-color:cadetblue;">
+                            <tr class="filters">
+                                <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                                <th><input type="text" class="form-control" placeholder="Emlak Tipi" disabled></th>
+                                <th><input type="text" class="form-control" placeholder="İlan Başlığı" disabled></th>
+                                <th><input type="text" class="form-control" placeholder="m² (Brüt)" disabled></th>
+                                <th><input type="text" class="form-control" placeholder="Oda Sayısı" disabled></th>
+                                <th><input type="text" class="form-control" placeholder="Fiyat" disabled></th>
+                                <th><input type="text" class="form-control" placeholder="İlan Tarihi" disabled></th>
+                                <th><input type="text" class="form-control" placeholder="Şehir" disabled></th>
+                            </tr>
+                            @*<tr>
+
+                                    <th>Emlak Tipi</th>
+                                    <th>İlan Başlığı</th>
+                                    <th>m² (Brüt)</th>
+                                    <th> Oda Sayısı</th>
+                                    <th>Fiyat</th>
+                                    <th>İlan tarihi</th>
+                                    <th>Şehir</th>
+                                </tr>*@
+                        </thead>
+                        <tbody>
+
+                            @foreach (EMLAKLAR item in Model)
+                            {
+                                <tr>
+
+                                    <td>@item.ID</td>
+                                    <td>@item.ILAN_KATEGORISI</td>
+                                    <td>@item.ILAN_BASLIGI</td>
+                                    <td>@item.BURUT_METREKARE</td>
+                                    <td>@item.ODA_SAYISI</td>
+                                    <td>@item.FIYAT</td>
+                                    <td>@item.ILAN_TARIHI</td>
+                                    <td>@item.ILLER.ILADI</td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </td>
+
+    </tr>
+</table>
+
